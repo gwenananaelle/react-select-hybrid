@@ -1,0 +1,20 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": "entry",
+                "corejs": "3.23"
+            }
+        ],
+        [
+            "@babel/preset-flow"
+        ],
+        [
+            "@babel/preset-react",
+            {
+                "throwIfNamespace": false
+            }
+        ]
+    ]
+}

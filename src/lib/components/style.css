@@ -1,0 +1,152 @@
+.select {
+    position: relative;
+}
+
+.select-label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.5px;    
+    color: #79747E;
+    position: absolute;
+    height: 16px;
+    left: -4px;
+    top: -5px;
+    background: #FFFBFE;
+    display: flex;
+    align-items: center;
+    padding: 0px 4px;
+    gap: 10px;
+    flex-direction: row;
+    z-index: 2;
+}
+.native-select,
+.custom-select {
+    position: relative;
+    width: 15rem;
+    height: 3.5rem;
+}
+
+.custom-select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+@media (hover: hover) {
+
+    .custom-select {
+        display: block;
+    }
+
+    .native-select:focus+.custom-select {
+        display: none;
+    }
+}
+
+.native-select:focus,
+.custom-select.isActive .custom-select-trigger {
+    border: 2px solid #6750A4;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.native-select,
+.custom-select-trigger {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 3.5rem;
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    border: 1px solid #79747E;
+    border-radius: 4px;
+    padding: 0rem 0.8rem;
+}
+
+.native-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 0.8rem;
+}
+
+.custom-select-trigger {
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.custom-select-trigger::after {
+    content: "▾";
+    position: absolute;
+    top: 0;
+    line-height: 3.5rem;
+    right: 0.8rem;
+}
+
+.custom-select-trigger:hover {
+    border-color: #6750A4;
+}
+
+.custom-select-options {
+    position: absolute;
+    top: calc(3.5rem + 0.8rem);
+    left: 0;
+    width: 100%;
+    border: 1px solid #6f6f6f;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 0 4px #e9e1f8;
+    z-index: 1;
+    padding: 0.8rem 0;
+    display: none;
+}
+
+.custom-select.isActive .custom-select-options {
+    display: block;
+}
+
+.custom-select-option {
+    position: relative;
+    padding: 0.8rem;
+    padding-left: 2.5rem;
+}
+
+.custom-select-option.isHover,
+.custom-select-option:hover {
+    background-color: #6750A4;
+    color: white;
+    cursor: default;
+}
+
+.custom-select-option:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.custom-select-option.isActive::before {
+    content: "✓";
+    position: absolute;
+    left: 0.8rem;
+}
