@@ -1,11 +1,32 @@
 .select {
     position: relative;
 }
+
+.select-label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.5px;    
+    color: #79747E;
+    position: absolute;
+    height: 16px;
+    left: -4px;
+    top: -5px;
+    background: #FFFBFE;
+    display: flex;
+    align-items: center;
+    padding: 0px 4px;
+    gap: 10px;
+    flex-direction: row;
+    z-index: 2;
+}
 .native-select,
 .custom-select {
     position: relative;
-    width: 22rem;
-    height: 4rem;
+    width: 15rem;
+    height: 3.5rem;
 }
 
 .custom-select {
@@ -26,17 +47,9 @@
     }
 }
 
-/* Add the focus states too, They matter, always! */
 .native-select:focus,
 .custom-select.isActive .custom-select-trigger {
-    outline: none;
-    box-shadow: white 0 0 0 0.2rem, #ff821f 0 0 0 0.4rem;
-}
-
-.custom-select-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.4rem;
+    border: 2px solid #6750A4;
 }
 
 .select-wrapper {
@@ -45,10 +58,23 @@
 
 .native-select,
 .custom-select-trigger {
-    font-size: 1.6rem;
-    background-color: #fff;
-    border: 1px solid #6f6f6f;
-    border-radius: 0.4rem;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 3.5rem;
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    border: 1px solid #79747E;
+    border-radius: 4px;
+    padding: 0rem 0.8rem;
 }
 
 .native-select {
@@ -58,15 +84,12 @@
     background-repeat: no-repeat;
     background-position-x: 100%;
     background-position-y: 0.8rem;
-    padding: 0rem 0.8rem;
 }
 
 .custom-select-trigger {
     position: relative;
-    width: 100%;
     height: 100%;
     background-color: #fff;
-    padding: 0.8rem 0.8rem;
     cursor: pointer;
 }
 
@@ -74,21 +97,21 @@
     content: "▾";
     position: absolute;
     top: 0;
-    line-height: 3.8rem;
+    line-height: 3.5rem;
     right: 0.8rem;
 }
 
 .custom-select-trigger:hover {
-    border-color: #8c00ff;
+    border-color: #6750A4;
 }
 
 .custom-select-options {
     position: absolute;
-    top: calc(3.8rem + 0.8rem);
+    top: calc(3.5rem + 0.8rem);
     left: 0;
     width: 100%;
     border: 1px solid #6f6f6f;
-    border-radius: 0.4rem;
+    border-radius: 4px;
     background-color: #fff;
     box-shadow: 0 0 4px #e9e1f8;
     z-index: 1;
@@ -108,7 +131,7 @@
 
 .custom-select-option.isHover,
 .custom-select-option:hover {
-    background-color: #865bd7;
+    background-color: #6750A4;
     color: white;
     cursor: default;
 }
